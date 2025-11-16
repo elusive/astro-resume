@@ -1,0 +1,23 @@
+---
+import { readFileSync } from 'fs';
+import { load } from 'js-yaml';
+import path from 'path';
+
+interface SkillCategory {
+  category: string;
+  skills: string;
+}
+
+const skillsDataPath = path.resolve(process.cwd(), 'src/data/skills.yml');
+const skillCategories: SkillCategory[] = load(readFileSync(skillsDataPath, 'utf8')) as SkillCategory[];
+---
+
+<div class="py-4">
+  <ul class="list-disc pl-5 space-y-2">
+    {skillCategories.map((item) => (
+      <li>
+        <span class="font-bold text-blue-600 dark:text-blue-400">{item.category}:</span> {item.skills}
+      </li>
+    ))}
+  </ul>
+</div>

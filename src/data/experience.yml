@@ -1,0 +1,24 @@
+# Jobs
+# The RND Group, Inc.
+- company: The RND Group, Inc.
+  industry: Medical Device FDA Regulated Software
+  position: Lead Engineer
+  techstack: 
+  duration: Feb, 2012 &mdash; Present
+  summary: Full stack software development for medical devices and FDA compliant systems.  This position involved heavy use of Windows Presentation Foundation (WPF) and the Prism MVVM libraries using MEF to develop touchscreen applications to interface with a proprietary diagnostics hardware and pipetting equipment.  The architectures are entirely service oriented and follow SOLID principles.  Comprehensive design and requirements documentation are also mandatory.  Mandatory unit testing and peer-reviews are part of a very mature development lifecycle. 
+  
+# Glorykidd Technologies
+- company: Glorykidd Technologies, LLC
+  position: Senior Developer
+  duration: Oct, 2009 &mdash; Feb, 2012
+  summary: This is a company serving business and web clients.  Development is predominantly Windows Forms in C#.  Currently working on backend support Windows forms applications, written in Visual Studio 2010 using C#.  SQL Server 2008 database coding as well.  Responsibilities include application architecture, unit testing, class design and UI development.
+
+- company: Global Aviation [GlobalAir.com]
+  position: Senior Developer
+  duration: Apr, 2009 &mdash; Oct, 2009
+  summary: This position involved rewriting a classic asp(3.0) application on a private intranet.  The new version is written in C# using ASP.Net MVC framework and test-driven development using VS testing tools.  The back-end of the application included a new Linq to SQL Server integraiton. Rewrite of this web application was the sole purpose of my contract.
+
+- company: Fastline Publications [Fastline.com]
+  position: Web Developer
+  duration: Oct, 2008 &mdash; Apr, 2009
+  summary: This is a company that publishes both print and web versions of farm equipment sales magazine.  I was also responsible for coding jquery plug-ins and windows service for updating Google base of products using test-driven development.  Contract was through Brooksource.

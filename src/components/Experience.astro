@@ -1,0 +1,25 @@
+---
+import { readFileSync } from 'fs';
+import { load } from 'js-yaml';
+import path from 'path';
+
+interface ExperienceEntry {
+  company: string;
+  position: string;
+  duration: string;
+  summary: string;
+}
+
+const experienceDataPath = path.resolve(process.cwd(), 'src/data/experience.yml');
+const experience: ExperienceEntry[] = load(readFileSync(experienceDataPath, 'utf8')) as ExperienceEntry[];
+---
+
+<div class="py-4 space-y-8">
+  {experience.map((entry) => (
+    <div class="border-l-4 border-blue-500 pl-4">
+      <h3 class="text-xl font-bold text-gray-900 dark:text-white">{entry.position} at {entry.company}</h3>
+      <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">{entry.duration}</p>
+      <p class="text-gray-700 dark:text-gray-300">{entry.summary}</p>
+    </div>
+  ))}
+</div>

@@ -1,0 +1,42 @@
+---
+import { readFileSync } from 'fs';
+import { load } from 'js-yaml';
+import path from 'path';
+
+interface LinkEntry {
+  url: string;
+  description: string;
+}
+
+interface PersonalData {
+  resume_avatar: string;
+}
+
+const linksDataPath = path.resolve(process.cwd(), 'src/data/links.yml');
+const links: LinkEntry[] = load(readFileSync(linksDataPath, 'utf8')) as LinkEntry[];
+
+const personalDataPath = path.resolve(process.cwd(), 'src/data/personal.yml');
+const personal: PersonalData = load(readFileSync(personalDataPath, 'utf8')) as PersonalData;
+
+const showResumeDownload = personal.resume_avatar === "true";
+---
+
+<div class="py-4">
+  <ul class="space-y-2">
+    {links.map((link) => (
+      <li>
+        <a href={link.url} target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+          {link.description}
+        </a>
+      </li>
+    ))}
+    {showResumeDownload && (
+      <li>
+        <a href="/JohnGilliland_Resume.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+          <img src="/download.svg" class="w-5 h-5 mr-2" alt="Download Resume" />
+          Download Resume (PDF)
+        </a>
+      </li>
+    )}
+  </ul>
+</div>

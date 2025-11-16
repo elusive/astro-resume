@@ -1,0 +1,9 @@
+# links
+- url: "http://github.com/elusive/Solodex"
+  description: Sample application using WPF / PRISM / MEF written in C#.
+- url: "https://github.com/elusive/MsTestEx"
+  description: MSTest Extension to add missing TestCase support.
+- url: "https://elusive.github.io"
+  description: Technical and personal writing weblog.
+- url: "http://www.elusivesoftware.net/go-programming-language/"
+  description: Article on Golang written for a technology site. 

@@ -1,0 +1,21 @@
+# Skills
+- skills: C#, Typescript, Go (Golang), Python, Ruby, XAML, CSS/Sass, SQL (TSQL)
+  category: Languages 
+
+- skills: .NET Core / ASP.NET APIs, Angular, React, WPF, UWP, Entity Framework, Node.js
+  category: Frameworks / Libraries
+
+- skills: AWS (Cloud Deployment), Azure, Docker, CI/CD Pipelines (Jenkins, Bamboo), Git
+  category: Cloud / DevOps
+
+- skills: PostgreSQL, MySQL, SQL Server, MongoDB, Data Modeling, ORM
+  category: Databases
+
+- skills: System Architecture, Microservices, Performance Optimization, Code Review, SOLID
+  category: Engineering Practices
+
+- skills: Gemini CLI, Copilot, Claude Code CLI, JIRA, Agile/Scrum
+  category: AI / Tools
+
+- skills: Async Communication, Requirements Gathering, Mentorship, Pair Programming
+  category: Soft Skills

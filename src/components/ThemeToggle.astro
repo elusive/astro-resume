@@ -1,0 +1,68 @@
+---
+// No Astro component script needed for this simple toggle,
+// as the logic is handled by the inline script in BaseHead.astro
+// and the button will just trigger the class change.
+---
+
+<button id="theme-toggle" class="fixed bottom-4 right-4 p-3 rounded-full bg-gray-700 text-white dark:bg-gray-200 dark:text-gray-800 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 z-50">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path id="moon-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    <path id="sun-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M4 12H3m15.354 5.354l-.707.707M6.343 6.343l-.707-.707m12.728 0l-.707-.707M6.343 17.657l-.707.707" class="hidden" />
+  </svg>
+</button>
+
+<script is:inline>
+  const themeToggle = document.getElementById('theme-toggle');
+  const htmlElement = document.documentElement;
+  const moonIcon = document.getElementById('moon-icon');
+  const sunIcon = document.getElementById('sun-icon');
+
+  const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+  if (currentTheme === 'dark') {
+    htmlElement.classList.add('dark');
+    if (moonIcon && sunIcon) {
+      moonIcon.classList.remove('hidden');
+      sunIcon.classList.add('hidden');
+    }
+  } else {
+    htmlElement.classList.remove('dark');
+    if (moonIcon && sunIcon) {
+      moonIcon.classList.add('hidden');
+      sunIcon.classList.remove('hidden');
+    }
+  }
+
+  themeToggle?.addEventListener('click', () => {
+    if (htmlElement.classList.contains('dark')) {
+      htmlElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      if (moonIcon && sunIcon) {
+        moonIcon.classList.add('hidden');
+        sunIcon.classList.remove('hidden');
+      }
+    } else {
+      htmlElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      if (moonIcon && sunIcon) {
+        moonIcon.classList.remove('hidden');
+        sunIcon.classList.add('hidden');
+      }
+    }
+  });
+
+  // Update icon on initial load based on theme
+  document.addEventListener('DOMContentLoaded', () => {
+    if (htmlElement.classList.contains('dark')) {
+      if (moonIcon && sunIcon) {
+        moonIcon.classList.remove('hidden');
+        sunIcon.classList.add('hidden');
+      }
+    } else {
+      if (moonIcon && sunIcon) {
+        moonIcon.classList.add('hidden');
+        sunIcon.classList.remove('hidden');
+      }
+    }
+  });
+</script>
