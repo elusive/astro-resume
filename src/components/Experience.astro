@@ -1,17 +1,7 @@
 ---
-import { readFileSync } from 'fs';
-import { load } from 'js-yaml';
-import path from 'path';
+import { getCollection } from 'astro:content';
 
-interface ExperienceEntry {
-  company: string;
-  position: string;
-  duration: string;
-  summary: string[];
-}
-
-const experienceDataPath = path.resolve(process.cwd(), 'src/data/experience.yml');
-const experience: ExperienceEntry[] = load(readFileSync(experienceDataPath, 'utf8')) as ExperienceEntry[];
+const experience = (await getCollection('experience'))[0].data;
 ---
 
 <div class="py-4 space-y-8">

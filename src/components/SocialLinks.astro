@@ -1,23 +1,15 @@
 ---
-import { readFileSync } from 'fs';
-import { load } from 'js-yaml';
-import path from 'path';
+import { getCollection } from 'astro:content';
 
-interface SocialLink {
-  url: string;
-  image: string;
-}
-
-const socialsDataPath = path.resolve(process.cwd(), 'src/data/socials.yml');
-const socialLinks: SocialLink[] = load(readFileSync(socialsDataPath, 'utf8')) as SocialLink[];
+const socialLinks = (await getCollection('socials'))[0].data;
 ---
 
-<div class="py-4">
-  <ul class="flex justify-center space-x-4">
+<div class="py-4 mx-2">
+  <ul class="flex float-right space-x-2 ">
     {socialLinks.map((link) => (
       <li>
         <a href={link.url} target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
-          <img src={link.image.replace('public/', '/')} class="w-8 h-8" alt="Social Icon" />
+          <img src={link.icon} class="w-8 h-8" alt={link.url} />
         </a>
       </li>
     ))}

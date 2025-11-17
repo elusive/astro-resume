@@ -1,9 +1,9 @@
 # links
 - url: "http://github.com/elusive"
-  image: "public/github.svg"
+  icon: "public/github.svg"
 - url: "https://linkedin.com/in/johncgilliland"
-  image: "public/linkedin.svg"
+  icon: "public/linkedin.svg"
 - url: "https://instagram.com/johncgilliland"
-  image: "public/instagram.svg"
+  icon: "public/instagram.svg"
 - url: "https://johng.info"
-  image: "public/website.svg" 
+  icon: "public/website.svg" 
