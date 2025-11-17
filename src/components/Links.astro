@@ -1,22 +1,8 @@
 ---
-import { readFileSync } from 'fs';
-import { load } from 'js-yaml';
-import path from 'path';
+import { getCollection } from 'astro:content';
 
-interface LinkEntry {
-  url: string;
-  description: string;
-}
-
-interface PersonalData {
-  resume_avatar: string;
-}
-
-const linksDataPath = path.resolve(process.cwd(), 'src/data/links.yml');
-const links: LinkEntry[] = load(readFileSync(linksDataPath, 'utf8')) as LinkEntry[];
-
-const personalDataPath = path.resolve(process.cwd(), 'src/data/personal.yml');
-const personal: PersonalData = load(readFileSync(personalDataPath, 'utf8')) as PersonalData;
+const links = (await getCollection('links'))[0].data;
+const personal = (await getCollection('personal'))[0].data;
 
 const showResumeDownload = personal.resume_avatar === "true";
 ---
