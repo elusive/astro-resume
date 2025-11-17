@@ -18,7 +18,7 @@ const personal: PersonalData = load(readFileSync(personalDataPath, 'utf8')) as P
 const lookingForWork = personal.resume_looking_for_work === 'yes';
 ---
 
-<header class="text-center py-8 px-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white relative shadow-md">
+<header class="text-center py-8 px-4 text-gray-900 dark:text-white relative">
   {lookingForWork ? (
     <div class="absolute top-4 right-4 bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-full">
       Actively looking for new opportunities
