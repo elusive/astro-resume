@@ -50,5 +50,13 @@ const { title, description, image = '/cover.jpg' } = Astro.props
   } else {
     document.documentElement.classList.add('dark')
   }
-</script>	
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle?.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  });
+</script>
 ---

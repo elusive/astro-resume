@@ -13,11 +13,12 @@ const skillCategories: SkillCategory[] = load(readFileSync(skillsDataPath, 'utf8
 ---
 
 <div class="py-4">
-  <ul class="list-disc pl-5 space-y-2">
+  <div class="grid grid-cols-2 gap-x-4 gap-y-2">
     {skillCategories.map((item) => (
-      <li>
-        <span class="font-bold text-blue-600 dark:text-blue-400">{item.category}:</span> {item.skills}
-      </li>
+      <>
+        <div class="font-bold text-blue-600 dark:text-blue-400">{item.category}</div>
+        <div>{item.skills}</div>
+      </>
     ))}
-  </ul>
+  </div>
 </div>

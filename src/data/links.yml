@@ -1,9 +1,11 @@
 # links
-- url: "http://github.com/elusive/Solodex"
-  description: Sample application using WPF / PRISM / MEF written in C#.
-- url: "https://github.com/elusive/MsTestEx"
-  description: MSTest Extension to add missing TestCase support.
-- url: "https://elusive.github.io"
-  description: Technical and personal writing weblog.
-- url: "http://www.elusivesoftware.net/go-programming-language/"
-  description: Article on Golang written for a technology site. 
+- url: "https://webtv.starz.com"
+  description: "Web application I worked on in my position at STARZ."
+- url: "https://talktherapy.nyc"
+  description: "Survey site for matching patients with providers which I completed recently."
+- url: "https://johng.info"
+  description: "My landing page and online resume."
+- url: "https://github.com/elusive/diagrammable"
+  description: "React application I wrote for editing Mermaid diagrams on your desktop."
+- url: "https://demo.utililog.com"
+  description: "SaaS application for electrical co-ops, in Alpine.js, C# API and fully hosted on AWS." 
