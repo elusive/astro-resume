@@ -2,7 +2,7 @@
 import { readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import path from 'path';
-
+import SocialLinks from './SocialLinks.astro';
 interface PersonalData {
   resume_name: string;
   resume_title: string;
@@ -18,7 +18,7 @@ const personal: PersonalData = load(readFileSync(personalDataPath, 'utf8')) as P
 const lookingForWork = personal.resume_looking_for_work === 'yes';
 ---
 
-<header class="text-center py-8 px-4 bg-gray-800 text-white relative">
+<header class="text-center py-8 px-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white relative shadow-md">
   {lookingForWork ? (
     <div class="absolute top-4 right-4 bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-full">
       Actively looking for new opportunities
@@ -29,10 +29,11 @@ const lookingForWork = personal.resume_looking_for_work === 'yes';
     </div>
   )}
   <h1 class="text-4xl font-bold mb-2">{personal.resume_name}</h1>
-  <h2 class="text-2xl text-gray-300 mb-4">{personal.resume_title}</h2>
+  <h2 class="text-2xl text-gray-600 dark:text-gray-300 mb-4">{personal.resume_title}</h2>
   <p class="text-lg mb-2">{personal.resume_contact}</p>
   <p class="text-lg mb-4">{personal.resume_email}</p>
   <p class="max-w-3xl mx-auto text-md leading-relaxed">
     {personal.resume_introduction}
   </p>
+      <SocialLinks />
 </header>
