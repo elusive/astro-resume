@@ -50,18 +50,10 @@ const socialsCollection = defineCollection({
   })),
 });
 
-const summaryCollection = defineCollection({
-    type: 'data',
-    schema: z.object({
-        summary: z.string(),
-    }),
-});
-
 export const collections = {
   experience: experienceCollection,
   links: linksCollection,
   personal: personalCollection,
   skills: skillsCollection,
-  socials: socialsCollection,
-  summary: summaryCollection,
+  socials: socialsCollection
 };
