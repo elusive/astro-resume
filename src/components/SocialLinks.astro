@@ -4,8 +4,8 @@ import { getCollection } from 'astro:content';
 const socialLinks = (await getCollection('socials'))[0].data;
 ---
 
-<div class="py-4 mx-2">
-  <ul class="flex float-right space-x-2 ">
+<div class="flex py-4 mx-2">
+  <ul class="flex space-x-2 ">
     {socialLinks.map((link) => (
       <li>
         <a href={link.url} target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">

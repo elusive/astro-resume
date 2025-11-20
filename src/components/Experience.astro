@@ -6,7 +6,7 @@ const experience = (await getCollection('experience'))[0].data;
 
 <div class="py-4 space-y-8">
   {experience.map((entry) => (
-    <div class="border-l-4 border-blue-500 pl-4">
+    <div class="border-l-4 border-gray-500 pl-4">
       <h3 class="text-xl font-bold text-gray-900 dark:text-white">{entry.position} at {entry.company}</h3>
       <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">{entry.duration}</p>
       <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
